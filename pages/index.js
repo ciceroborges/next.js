@@ -1,5 +1,4 @@
- // select the div element with 'app' id
- const app = document.getElementById("app");
+import { useState } from 'react';
  
  // header component
  function Header(props) {
@@ -9,10 +8,10 @@
  }
 
  // homepage component
- function HomePage() {
-    const [likes, setLikes] = React.useState(0);
+ export default function HomePage() {
+    const [likes, setLikes] = useState(0);
 
-    const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+    const names = ['Adas Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
 
     function handleClick() {
         setLikes(likes + 1)
@@ -31,6 +30,3 @@
         </>
     )
  }
-
- // render elements
- ReactDOM.render(<HomePage/>, app);
