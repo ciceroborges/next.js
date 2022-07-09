@@ -2,16 +2,24 @@
  const app = document.getElementById("app");
  
  // header component
- function Header() {
-    return (<h1>Develop. Preview. Ship. 🚀</h1>)
+ function Header(props) {
+    const { title } = props;
+
+    return (<h1>{title}. 🚀</h1>)
  }
 
  // homepage component
  function HomePage() {
+    const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
     return (
         <>
-            <Header/>
-            <span>HomePage</span>
+            <Header title="React 💙"/>
+            <ul> 
+                {names.map((name) => (
+                    <li key={name}>{name}</li>
+                ))}
+            </ul>
         </>
     )
  }
